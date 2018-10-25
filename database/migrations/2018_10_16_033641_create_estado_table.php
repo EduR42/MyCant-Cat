@@ -17,6 +17,7 @@ class CreateEstadoTable extends Migration
         Schema::create('estado', function (Blueprint $table) {
             $table->increments('IdEstado');
             $table->string('NombreEstado',20);
+            $table->string('Activo',2);
             $table->timestamps();
             $table->engine = 'InnoDB';
         });

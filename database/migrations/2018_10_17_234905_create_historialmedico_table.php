@@ -17,9 +17,7 @@ class CreateHistorialmedicoTable extends Migration
             $table->increments('IdHistorial');
             $table->integer('IdCliente')->unsigned();
             $table->foreign('IdCliente')->references('IdCliente')->on('cliente')->onDelete('cascade');
-            $table->integer('IdMascota')->unsigned();
-            $table->foreign('IdMascota')->references('IdMascota')->on('mascota')->onDelete('cascade');
-            $table->string('Mascota', 15);
+            $table->string('NombreMascota', 15);
             $table->string('MotivoCita', 15);
             $table->date('FechaCita');
             $table->string('Diagnostico', 50);

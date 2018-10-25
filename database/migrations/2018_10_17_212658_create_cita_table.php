@@ -22,13 +22,13 @@ class CreateCitaTable extends Migration
             $table->integer('IdEstadoMas')->unsigned();
             $table->foreign('IdEstadoMas')->references('IdEstadoMas')->on('estadomascota')->onDelete('cascade');
             $table->string('NombreMas',20);
-            $table->string('TipoMas',15);
+            $table->integer('IdTipoMas')->unsigned();
+            $table->foreign('IdTipoMas')->references('IdTipoMas')->on('tipomascota')->onDelete('cascade');
             $table->string('MotivoCit',50);
             $table->integer('IdCliente')->unsigned();
             $table->foreign('IdCliente')->references('IdCliente')->on('cliente')->onDelete('cascade');
-            $table->integer('IdTipoC')->unsigned();
-            $table->foreign('IdTipoCit')->references('IdTipoCit')->on('tipocita')->onDelete('cascade');
             $table->integer('IdTipoCit')->unsigned();
+            $table->foreign('IdTipoCit')->references('IdTipoCit')->on('tipocita')->onDelete('cascade');
             $table->timestamps();
             $table->engine = 'InnoDB';
         });

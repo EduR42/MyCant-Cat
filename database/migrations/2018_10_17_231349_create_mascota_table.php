@@ -26,6 +26,7 @@ class CreateMascotaTable extends Migration
             $table->string('Foto2',50);
             $table->integer('IdTipoMas')->unsigned();
             $table->foreign('IdTipoMas')->references('IdTipoMas')->on('tipomascota')->onDelete('cascade');
+            $table->string('Activo',2);
             $table->timestamps();
             $table->engine = 'InnoDB';
         });
